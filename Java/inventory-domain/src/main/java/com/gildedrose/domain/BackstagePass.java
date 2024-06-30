@@ -20,6 +20,8 @@ public class BackstagePass extends Item implements CanIncrease, CanDegrade, CanV
     public void degradeQuality() {
         if (sellIn < 0) {
             quality = 0;
+        } else if (quality >= 0) {
+            quality--;
         }
     }
 
