@@ -9,4 +9,9 @@ public class ItemCreatedEvent extends ItemEvent {
     public ItemCreatedEvent(Item item, LocalDateTime createdAt) {
         super(item, createdAt);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Item Created Event {%s createdAt %s}", this.getItem().name, this.getCreatedAt());
+    }
 }
