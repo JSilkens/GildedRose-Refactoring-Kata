@@ -19,5 +19,9 @@ public class InventoryController {
         this.updateInventoryUseCase.updateQuality();
     }
 
+    public void updateSellin() {
+        this.updateInventoryUseCase.UpdateSellin();
+    }
+
 
 }

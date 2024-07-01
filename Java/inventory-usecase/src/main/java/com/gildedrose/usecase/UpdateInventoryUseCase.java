@@ -26,6 +26,10 @@ public class UpdateInventoryUseCase {
         this.domainEventPublisher = domainEventPublisher;
     }
 
+    public void UpdateSellin() {
+        Arrays.stream(items).forEach(item -> item.sellIn--);
+    }
+
 
     /*
     This could be called from a batch that will run at the end of each day.

@@ -20,10 +20,17 @@ public class Main implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         System.out.println("Welcome to Gilded Rose!");
         System.out.println("-----------------------");
 
-        inventoryController.updateAll();
+        int days = 2;
+
+        for (int i = 0; i < days; i++) {
+            System.out.println("-------- day " + i + " --------");
+            inventoryController.updateSellin();
+            inventoryController.updateAll();
+        }
+
     }
 }

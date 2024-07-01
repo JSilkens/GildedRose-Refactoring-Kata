@@ -49,7 +49,7 @@ class ConjuredTest {
         Conjured conjured = Conjured.builder()
             .name("Conjured 1")
             .sellIn(1)
-            .quality(50)
+            .quality(-50)
             .build();
 
         Result<Conjured> expected = Result.failure(new InventoryDomainViolation("Quality cannot be negative"));
