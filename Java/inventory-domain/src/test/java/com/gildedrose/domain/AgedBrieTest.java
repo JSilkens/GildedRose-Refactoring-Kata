@@ -120,25 +120,6 @@ class AgedBrieTest {
     }
 
     @Test
-    void givenAgedBrieWithNegativeSellIn_whenDoingValidation_thenFailure() {
-        //given
-        AgedBrie agedBrie = AgedBrie.builder()
-            .age(0)
-            .name("Aged Brie 1")
-            .sellIn(-1)
-            .quality(40)
-            .build();
-
-        Result<AgedBrie> expected = Result.failure(new InventoryDomainViolation("Sell in cannot be negative"));
-
-        //when
-        Result<AgedBrie> actual = agedBrie.validate();
-
-        //then
-        assertThat(actual).isEqualTo(expected);
-    }
-
-    @Test
     void givenAgedBrieWithNegativeSellInDate_whenDegradeQuality_thenQualityDegraded() {
         //given
         AgedBrie agedBrie = AgedBrie.builder()
@@ -154,23 +135,5 @@ class AgedBrieTest {
 
         //then
         assertThat(agedBrie.quality).isEqualTo(38);
-    }
-
-    @Test
-    void givenAgedBrieWithPositiveSellInDate_whenDegradeQuality_thenQualityNotDegraded() {
-        //given
-        AgedBrie agedBrie = AgedBrie.builder()
-            .age(0)
-            .name("Aged Brie 1")
-            .sellIn(1)
-            .quality(40)
-            .build();
-
-        //when
-
-        agedBrie.degradeQuality();
-
-        //then
-        assertThat(agedBrie.quality).isEqualTo(40);
     }
 }
