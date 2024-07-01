@@ -53,6 +53,6 @@ public class UpdateInventoryUseCase {
     }
 
     private void printItems() {
-        Arrays.stream(items).forEach(item -> System.out.println(item));
+        Arrays.stream(items).forEach(System.out::println);
     }
 }
